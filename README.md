@@ -1,161 +1,146 @@
-
 # Playwright API Testing Framework (With JavaScript)
 
-🚀 Introduction
-Playwright API Automation Framework! This project is designed to test a Dummy  Json REST API efficiently using Playwright and JavaScript with html Report. It ensures all the API functionalities work as expected.
+## 🚀 Introduction 
+This project is designed to test a Dummy JSON REST API efficiently using Playwright and JavaScript with HTML reports. It ensures all the API functionalities work as expected.
 
-## Features
+---
 
-- CRUD API Tests using DummyJSON  Sample API
+## ✅ Features
+- CRUD API Tests using DummyJSON Sample API
 - Status code, payload, and header validation
 - Positive & negative test cases
 - HTML report generation
 
-🛠️ Technologies Used
-JAVA Script – Core programming language.
-Playwright – For API testing.
-Html report – To Show Detailed Report.
-Node and package.json – For dependency management.
-Github – As a source Control.
+---
 
-📂 Project Structure
-playwright-api-framework/
-├── tests/
-│   ├── createProduct.spec.js
-│   ├── readProduct.spec.js
-│   ├── updateProduct.spec.js
-│   ├── deleteProduct.spec.js
-│   └── utils/
-│       └── logger.js
-├── playwright.config.js
-├── package.json
-└── README.md
+## 🛠️ Technologies Used
+- **JavaScript** – Core programming language 
+- **Playwright** – For API testing 
+- **HTML Report** – To show detailed test results 
+- **Node.js** & `package.json` – For dependency management 
+- **GitHub** – As version control system 
 
+---
 
-🔧 How to Set Up & Run the Project (Setup Instrctions)
+## 📂 Project Structure
 
-1️⃣ Prerequisites
-Before you start, make sure you have:
+playwright-api-framework/ ├── tests/ │   ├── createProduct.spec.js │   ├── readProduct.spec.js │   ├── updateProduct.spec.js │   ├── deleteProduct.spec.js │   └── utils/ │       └── logger.js ├── playwright.config.js ├── package.json └── README.md
 
-Nodejs install on your System
-Visual Studio Code as IDE
-Postman (Optional, for manual testing)
+---
 
-2️⃣ Clone or Create the Project
-If you are cloning an existing repository:
+## ⚙️ How to Set Up & Run the Project
 
-git clone <repository-url>
-cd PlaYWRIGHT-API-FRAMEWORK
+### 1️⃣ Prerequisites
+Make sure you have:
+- Node.js installed
+- Visual Studio Code (or any code editor)
+- Postman (optional, for manual API testing)
 
-3️⃣ Open terminal and type command npm install
+### 2️⃣ Clone the Project
+```bash
+git clone https://github.com/ajaymurari1/playwright-api-framework.git
+cd playwright-api-framework
+
+3️⃣ Install Dependencies
+
+npm install
 
 4️⃣ Run API Tests
-To execute all tests using command line, run:
 
-npx playwright test  
+npx playwright test
 
 5️⃣ Generate & View Test Reports
-To generate a detailed test report, run:
 
 npx playwright show-report
-Once completed, reports will be open automatically on your chrome browser.
 
+This will automatically open the HTML report in your default browser.
 
-🔗 API Endpoints
-Here are the API endpoints tested in this framework:
+---
 
-Method	Endpoint	       Description
-POST	   /products/add	 Add new Product
-DELETE	/products/1	    Delete Product By id
-GET	   /products/1	    Get product By id
-PUT	   /products/1	    Update product By id
+🔗 API Endpoints Covered
 
-📝 Running API Requests Manually
-Want to test the API outside of the framework? Use the following cURL commands:
+---
 
-1. Create (Add )Product (POST)
+🧪 Sample cURL Commands (Manual Testing)
 
-Positive Case
+1. Create Product (POST)
+
+Positive Case:
 
 curl -X POST https://dummyjson.com/products/add \
   -H "Content-Type: application/json" \
   -d '{"title": "New Product", "description": "Product description", "price": 100}'
 
-Negative Case (missing title)
+Negative Case (Missing Title):
 
 curl -X POST https://dummyjson.com/products/add \
   -H "Content-Type: application/json" \
   -d '{"description": "Product description", "price": 100}'
 
-
 ---
 
 2. Read Product (GET)
 
-Positive Case
+Positive Case:
 
 curl -X GET https://dummyjson.com/products/1
 
-Negative Case (non-existent product)
+Negative Case (Non-existent ID):
 
 curl -X GET https://dummyjson.com/products/99999
-
 
 ---
 
 3. Update Product (PUT)
 
-Positive Case
+Positive Case:
 
 curl -X PUT https://dummyjson.com/products/1 \
   -H "Content-Type: application/json" \
   -d '{"title": "Updated Product", "price": 150}'
 
-Negative Case (invalid ID)
+Negative Case (Invalid ID):
 
 curl -X PUT https://dummyjson.com/products/99999 \
   -H "Content-Type: application/json" \
   -d '{"title": "Non-existent Product"}'
 
-
 ---
 
 4. Delete Product (DELETE)
 
-Positive Case
+Positive Case:
 
 curl -X DELETE https://dummyjson.com/products/1
 
-Negative Case (non-existent product)
+Negative Case:
 
 curl -X DELETE https://dummyjson.com/products/99999
+
+---
+
+📬 How to Use in Postman
+
+1. Open Postman
+
+2. Create a new request
+
+3. Paste the API URL
+
+4. Set method (GET, POST, PUT, DELETE)
+
+5. Under Headers, add: Content-Type: application/json
+
+6. Under Body > Raw > JSON, paste the request payload
+
+7. Click Send
+
 
 
 ---
 
-How to Use in Postman
-
-1. Open Postman.
-
-
-2. Create a new request.
-
-
-3. Paste the URL from the cURL into the address bar.
-
-
-4. Set the method (GET, POST, PUT, DELETE).
-
-
-5. Go to Headers tab: Add Content-Type: application/json if needed.
-
-
-6. Go to Body > Raw > JSON: Paste the JSON body where applicable.
-
-
-7. Hit Send!
-
-
 🛠️ Troubleshooting
-If tests fail, check the logs in:
+
+If any tests fail, view the HTML report:
+
 npx playwright show-report
