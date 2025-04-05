@@ -35,7 +35,6 @@ playwright-api-framework/
    ├── playwright.config.js 
    ├── package.json 
    └── README.md
-
 ## ⚙️ How to Set Up & Run the Project
 
 ### 1️⃣ Prerequisites
