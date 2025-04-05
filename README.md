@@ -27,14 +27,14 @@ This project is designed to test a Dummy JSON REST API efficiently using Playwri
 playwright-api-framework/
  ├── tests/
  │   ├── createProduct.spec.js
-  │   ├── readProduct.spec.js 
-  │   ├── updateProduct.spec.js 
-  │   ├── deleteProduct.spec.js 
-  │   └── utils/ 
-  │       └── logger.js
-   ├── playwright.config.js 
-   ├── package.json 
-   └── README.md
+ │   ├── readProduct.spec.js
+ │   ├── updateProduct.spec.js
+ │   ├── deleteProduct.spec.js
+ │   └── utils/
+ │       └── logger.js
+ ├── playwright.config.js
+ ├── package.json
+ └── README.md
 ## ⚙️ How to Set Up & Run the Project
 
 ### 1️⃣ Prerequisites
